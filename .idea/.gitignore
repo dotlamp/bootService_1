@@ -1,4 +1,4 @@
 .gradle
 .idea
-application-oauth.properties
 appplication-google.properties
+appplication-naver.properties
