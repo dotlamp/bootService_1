@@ -1,5 +1,6 @@
 package com.dotlamp.boot.springboot.config.auth;
 
+import com.dotlamp.boot.springboot.config.auth.CustomOAuth2UserService;
 import com.dotlamp.boot.springboot.domain.user.Role;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
