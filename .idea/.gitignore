@@ -2,3 +2,5 @@
 .idea
 appplication-google.properties
 appplication-naver.properties
+appplication-kakao.properties
+appplication-mysql.properties

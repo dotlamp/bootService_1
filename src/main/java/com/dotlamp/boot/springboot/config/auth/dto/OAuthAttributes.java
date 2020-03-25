@@ -30,6 +30,7 @@ public class OAuthAttributes {
             return ofNaver("id", attributes);
         }
 
+
         return ofGoogle(userNameAttributeName, attributes);
     }
 
@@ -54,6 +55,8 @@ public class OAuthAttributes {
                 .nameAttributeKey(userNameAttributeName)
                 .build();
     }
+
+
 
     //User 엔티티 생성, OauthAttribute에서 엔티티 생성하는 시점은 처음 가일할 떄
     //가입할때의 기본 권한은 Guest로 주기 위해 Role.GUEST 사용
