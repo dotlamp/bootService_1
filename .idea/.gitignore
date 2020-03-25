@@ -1,6 +1,4 @@
 .gradle
 .idea
-appplication-google.properties
-appplication-naver.properties
-appplication-kakao.properties
-appplication-mysql.properties
+application-oauth.properties
+application-real-db.properties
