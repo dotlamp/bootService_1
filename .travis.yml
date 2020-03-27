@@ -13,6 +13,8 @@ cache:
     - '$HOME/.gradle'
 
 script: "./gradlew clean build"
+before_install:
+  - chomod +x gradlew
 
 before_deploy:
   - zip -r dotlamp *
