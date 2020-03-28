@@ -1,4 +1,4 @@
-package com.dotlamp.boot.springboot.config.auth;
+package com.dotlamp.boot.springboot.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;

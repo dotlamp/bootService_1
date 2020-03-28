@@ -25,8 +25,8 @@ public class IndexController {
         model.addAttribute("posts", postsService.findAllDesc());
         /* @Loginuser Session user 받으면서 생략
         SessionUser user = (SessionUser) httpSession.getAttribute("user");*/
-        if(user != null){
-            model.addAttribute("userName",user.getName());
+        if (user != null) {
+            model.addAttribute("userName", user.getName());
         }
         return "index";
     }
@@ -37,7 +37,7 @@ public class IndexController {
     }
 
     @GetMapping("/posts/update/{id}")
-    public String postsUpdate(@PathVariable Long id, Model model){
+    public String postsUpdate(@PathVariable Long id, Model model) {
         PostsResponseDto dto = postsService.findById(id);
         model.addAttribute("post", dto);
         return "posts-update";

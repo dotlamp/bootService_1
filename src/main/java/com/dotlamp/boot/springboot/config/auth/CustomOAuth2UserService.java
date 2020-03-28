@@ -27,6 +27,7 @@ public class CustomOAuth2UserService implements OAuth2UserService<OAuth2UserRequ
     public OAuth2User loadUser(OAuth2UserRequest userRequest) throws OAuth2AuthenticationException {
         OAuth2UserService delegate = new DefaultOAuth2UserService();
         OAuth2User oAuth2User = delegate.loadUser(userRequest);
+
         String registrationId = userRequest.getClientRegistration().getRegistrationId();
         //로그인 진행 중인 서비스를 구분하는 코드 (구글인지 네이버인지)
         String userNameAttributeName = userRequest.getClientRegistration().getProviderDetails().getUserInfoEndpoint().getUserNameAttributeName();
@@ -44,10 +45,10 @@ public class CustomOAuth2UserService implements OAuth2UserService<OAuth2UserRequ
                 attributes.getNameAttributeKey());
     }
 
-        private User saveOrUpdate(OAuthAttributes attributes) {
-            User user = userRepository.findByEmail(attributes.getEmail())
-                    .map(entity -> entity.update(attributes.getName(), attributes.getPicture()))
-                    .orElse(attributes.toEntity());
+    private User saveOrUpdate(OAuthAttributes attributes) {
+        User user = userRepository.findByEmail(attributes.getEmail())
+                .map(entity -> entity.update(attributes.getName(), attributes.getPicture()))
+                .orElse(attributes.toEntity());
 
         return userRepository.save(user);
     }
